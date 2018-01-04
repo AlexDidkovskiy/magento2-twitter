@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="AlexDidkovskiy_Twitter::admin" title="Twitter" module="AlexDidkovskiy_Twitter" sortOrder="0" parent="AlexDidkovskiy_Core::admin" resource="AlexDidkovskiy_Twitter::admin" />
+        <add id="AlexDidkovskiy_Twitter::config" title="Configuration" module="AlexDidkovskiy_Twitter" sortOrder="0" parent="AlexDidkovskiy_Twitter::admin" action="adminhtml/system_config/edit/section/alexdidkovskiy_twitter" resource="AlexDidkovskiy_Twitter::config" />
+    </menu>
+</config>

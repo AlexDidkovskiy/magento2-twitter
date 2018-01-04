@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="main">
+            <block name="alexdidkovskiy_twitter.latest" class="AlexDidkovskiy\Twitter\Block\Tweets" after="-" template="tweets.phtml" ifconfig="alexdidkovskiy_twitter/config/enabled">
+                <arguments>
+                    <argument name="title" xsi:type="string">Latest Tweets</argument>
+                    <argument name="type" xsi:type="string">latest</argument>
+                </arguments>
+            </block>
+
+            <block name="alexdidkovskiy_twitter.mentions" class="AlexDidkovskiy\Twitter\Block\Tweets" after="alexdidkovskiy_twitter.latest" template="tweets.phtml" ifconfig="alexdidkovskiy_twitter/config/enabled">
+                <arguments>
+                    <argument name="title" xsi:type="string">Mentions Tweets</argument>
+                    <argument name="type" xsi:type="string">mentions</argument>
+                </arguments>
+            </block>
+
+            <block name="alexdidkovskiy_twitter.search" class="AlexDidkovskiy\Twitter\Block\Tweets" after="alexdidkovskiy_twitter.mentions" template="tweets.phtml" ifconfig="alexdidkovskiy_twitter/config/enabled">
+                <arguments>
+                    <argument name="title" xsi:type="string">Search Tweets</argument>
+                    <argument name="type" xsi:type="string">search</argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+    </body>
+</page>

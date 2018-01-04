@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+
+<widgets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Widget:etc/widget.xsd">
+    <widget id="alexdidkovskiy_twitter" class="AlexDidkovskiy\Twitter\Block\Widget\Tweets">
+        <label translate="true">Twitter Feed</label>
+        <description translate="true">Display a Twitter feed.</description>
+        <parameters>
+            <parameter name="title" xsi:type="text" visible="true" sort_order="0">
+                <label translate="true">Title</label>
+            </parameter>
+            <parameter name="number_of_tweets" xsi:type="select" source_model="AlexDidkovskiy\Twitter\Model\Config\Source\NumberOfTweets" visible="true" sort_order="10">
+                <label translate="true">Number of tweets to show</label>
+            </parameter>
+            <parameter name="type_of_feed" xsi:type="select" source_model="AlexDidkovskiy\Twitter\Model\Config\Source\TypeOfFeed" visible="true" sort_order="20">
+                <label translate="true">Type of feed to show</label>
+            </parameter>
+            <parameter name="search_query" xsi:type="text" visible="true" sort_order="30">
+                <label translate="true">Search query</label>
+                <description>Used when displaying searched tweets. Search query of 500 characters maximum, including operators. If left blank system config settings will be used.</description>
+                <depends>
+                    <parameter name="type_of_feed" value="search-tweets" />
+                </depends>
+            </parameter>
+        </parameters>
+    </widget>
+</widgets>
